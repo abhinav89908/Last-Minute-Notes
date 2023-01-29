@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icon for website -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/logo/favicon/site.webmanifest">
+
+    <title>Last Minute Notes | Home</title>
+
+    <!-- Linking Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Linking Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scripts/index.js">
+
+</head>
+
+<body>
+
+    <!-- >>>Change the header bg and add the gif remove the text -->
+    <header>
+        {{!-- <div class="banner"> </div> --}}
+
+        <!-- Navigation Bar -->
+        <div>
+            <nav class="navbar">
+                <!-- >>>Change Home with the logo -->
+                <a href="/">
+                    <img class="logo" src="./Images/logoLMN.png" alt="logo last minute notes">
+                </a>
+                <a class="menu-btn" href="/about">About</a>
+                <a class="menu-btn" href="/studyMaterial">Study Material</a>
+                <a class="menu-btn" href="/practice">Practice</a>
+                <a class="menu-btn" href="/uploads">Uploads</a>
+                <a class="menu-btn " href="/uploads">{{username}}</a>
+                
+                {{!-- <span id="usernamefield"></span> --}}
+                <div id="usernamefield"></div>
+                <a class="menu-btn flex-align-left" href="/register" id="register">Login/SignUp</a>
+            </nav>
+
+        </div>
+        <div class="banner"> </div>
+
+    </header>
+
+    <main>
+        <br><br>
+        <h1 align="center" >Upload Your Files here!</h1>
+        <section>
+            <form action="/upload" method="post">
+
+                <p><h4>Your Name: </h4></p>
+                <input type="text" placeholder="Name" name="firstName2">
+                <p><h4>Your Email: </h4></p>
+                <input type="email" placeholder="Email" name="email2">
+                <p><h4>Course: </h4></p>
+                <input type="text" placeholder="Course" name="course">
+                <p><h4>Year: </h4></p>
+                <input type="text" placeholder="Year(in number)" name="year">
+                <p><h4>Subject: </h4></p>
+                <input type="text" placeholder="Subject" name="subject">
+                <p><h4>File Link: </h4></p>
+                <input type="text" placeholder="File Link" name="fileLink">
+                <br><br>
+                <input type="submit" name="submit" >
+            </form>
+
+        </section>
+
+        
+    </main>
+
+    {{>footer}}
+    <!-- Flickity JS files -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+</body>
+
+</html>

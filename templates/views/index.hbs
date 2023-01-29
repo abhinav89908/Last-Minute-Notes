@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icon for website -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/logo/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/logo/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/logo/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/logo/favicon/site.webmanifest">
+
+    <title>Last Minute Notes | Home</title>
+
+    <!-- Linking Fontawesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+    <!-- Linking Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scripts/index.js">
+    <script>
+        let username = {{username}};
+        
+            window.alert("user exists");
+        if(username.length>0){
+            document.getElementById("usernamefield").innerHTML = "Hellloooo";
+            window.alert("user exists");
+            window.alert("user exists");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- >>>Change the header bg and add the gif remove the text -->
+    <header>
+        {{!-- <div class="banner"> </div> --}}
+
+        <!-- Navigation Bar -->
+        <div>
+            <nav class="navbar">
+                <!-- >>>Change Home with the logo -->
+                <a href="/">
+                    <img class="logo" src="./Images/logoLMN.png" alt="logo last minute notes">
+                </a>
+                <a class="menu-btn" href="/about">About</a>
+                <a class="menu-btn" href="/studyMaterial">Study Material</a>
+                <a class="menu-btn" href="/practice">Practice</a>
+                <a class="menu-btn" href="/uploads">Uploads</a>
+                <a class="menu-btn " href="/uploads">{{username}}</a>
+                
+                {{!-- <span id="usernamefield"></span> --}}
+                <div id="usernamefield"></div>
+                <a class="menu-btn flex-align-left" href="/register" id="register">Login/SignUp</a>
+            </nav>
+
+        </div>
+        <div class="banner"> </div>
+
+    </header>
+    
+    <main>
+        <section class="about_section">
+            <h2><span>About</span></h2>
+            <!-- Courses Carousel -->
+            <div class="carousel js-flickity" data-flickity='{"wrapAround": true }'>
+                <div class="carousel-cell">
+                    <p>
+                        
+                        “Imagine a world in which every single person on the planet is given free access to the sum of all human knowledge. That's what we're doing.” — Jimmy Wales
+                    </p>
+                </div>
+                <div class="carousel-cell">
+                    <img src="./Images/geuImg.jpg" alt="GEU Image" width="450vh" class="collegeImg">
+                </div>
+                <div class="carousel-cell">
+                    <p>
+
+                        “Imagine a world in which every single person on the planet is given free access to the sum of all human knowledge. That's what we're doing.” — Jimmy Wales
+                    </p>
+                </div>
+                <div class="carousel-cell">
+                    <img src="./Images/gehuImg.jpeg" alt="GEHU Image" width="450vh" class="collegeImg">
+                </div>
+                
+            </div>
+        </section>
+        
+        <section class="study_material">
+            <h2><span>Study Material</span></h2>
+            <!-- Notes Carousel -->
+            <div class="carousel js-flickity" data-flickity-options='{ "wrapAround": true }'>
+            {{#each csection as |value key|}}
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img 
+                            class="img-responsive"
+                            src="./Images/notes.jpg" >
+                    </a>
+                    <br>
+                    {{value.course}}
+                </div>
+            {{/each}}
+                
+        </section>
+        <section class="study_material">
+            <h2><span>Practice Problem</span></h2>
+            <!-- Notes Carousel -->
+            <div class="carousel js-flickity" data-flickity-options='{ "wrapAround": true }'>
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img
+                            class="img-responsive"
+                            src="./Images/notes.jpg" ></a>
+                </div>
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img
+                            class="img-responsive"
+                            src="./Images/notes.jpg" ></a>
+                </div>
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img
+                            class="img-responsive"
+                            src="./Images/notes.jpg" ></a>
+                </div>
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img
+                            class="img-responsive"
+                            src="./Images/notes.jpg" ></a>
+                </div>
+                <div class="carousel-cell">
+                    <a target="_blank" href="#"><img
+                            class="img-responsive"
+                            src="./Images/notes.jpg" ></a>
+                </div>
+                
+        </section>
+
+        <section class="our_founder">
+            <h2><span>Founder</span></h2>
+
+            <img class="profile_img" src="./Images/Abhinav_circle.png" alt="This is Abhinav Prajapati" height="210px">
+            <h3 class="profile_name">Abhinav Prajapati</h3>
+            <div class="sm-handle">
+                <a class="linkdn_handle" href="https://www.linkedin.com/in/abhinav-prajapati-546201221/" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-linkedin fa-lg"></i>LinkedIn</a>
+                <a class="insta_handle" href="https://www.instagram.com/abhii9vv/" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-instagram fa-lg"></i>Instagram</a>
+            </div>
+
+            <div class="about_us">
+                <h4 class="about_title"> </h4>
+                <h5 class="about_content"></h5>
+            </div>
+        </section>
+    </main>
+
+    {{>footer}}
+    <!-- Flickity JS files -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+        const username = {{username}};
+        let sampleText = document.getElementById("sampleText"); 
+        sampleText.innerHTML = "usern";
+        if(username.length>0){
+            let loginbtn = document.getElementById("register"); 
+            loginbtn.style.display = "none";
+
+        }
+    </script>
+    
+</body>
+
+</html>
